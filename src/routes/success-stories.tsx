@@ -5,11 +5,10 @@ import { ArrowRight } from "lucide-react";
 import heroNight from "@/assets/hero-night.jpg";
 import { CampaignFilms } from "@/components/site/CampaignFilms";
 import { Reveal } from "@/components/site/Reveal";
+import { StoryMedia } from "@/components/site/StoryMedia";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-/** Brand files exported for dark backgrounds need a dark plate. */
-const onDark = (url: string) => url.includes("new_brand_logo");
 import { featuredStories, stories, storyMarkets } from "@/lib/stories";
 
 export const Route = createFileRoute("/success-stories")({
@@ -71,24 +70,13 @@ function SuccessStories() {
             {featuredStories.map((story, i) => (
               <Reveal key={story.brand} delay={i * 110} className="bg-[color:var(--ink)]">
                 <article className="group flex h-full flex-col">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={story.poster}
-                      alt={`${story.brand} campaign`}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                  </div>
+                  <StoryMedia
+                    story={story}
+                    className="aspect-[4/3]"
+                    label={`${story.brand} campaign film`}
+                  />
                   <div className="flex flex-1 flex-col justify-between p-8">
-                    <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-28 w-full group-hover:logo-tile-hover`}>
-                      <img
-                        src={story.logo}
-                        alt={`${story.brand} logo`}
-                        loading="lazy"
-                        className="logo-img-color max-h-20"
-                      />
-                    </div>
-                    <div className="mt-8">
+                    <div>
                       <h2 className="text-2xl font-extrabold tracking-tight">{story.brand}</h2>
                       <p className="eyebrow mt-3">{term("markets", story.market)}</p>
                       <div className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-6">
@@ -137,15 +125,8 @@ function SuccessStories() {
                 delay={Math.min(i, 8) * 60}
                 className="bg-background"
               >
-                <article className="group flex h-full flex-col gap-6 p-6 transition-colors duration-500 hover:bg-card/60">
-                  <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-32 w-full group-hover:logo-tile-hover`}>
-                    <img
-                      src={story.logo}
-                      alt={`${story.brand} logo`}
-                      loading="lazy"
-                      className="logo-img-color max-h-24"
-                    />
-                  </div>
+                <article className="group flex h-full flex-col gap-6 p-4 transition-colors duration-500 hover:bg-card/60">
+                  <StoryMedia story={story} label={`${story.brand} campaign film`} />
                   <div className="flex flex-1 flex-col justify-end">
                     <h3 className="text-lg font-bold tracking-tight sm:text-xl">{story.brand}</h3>
                     <p className="eyebrow mt-2">{term("markets", story.market)}</p>
