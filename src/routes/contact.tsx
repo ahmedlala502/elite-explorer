@@ -124,6 +124,7 @@ function Contact() {
             </div>
           </Reveal>
         </div>
-      </section>
-  );
+      </div>
+    </section>
+
 }
