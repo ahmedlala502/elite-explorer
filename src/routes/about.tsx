@@ -109,7 +109,7 @@ function About() {
                 height={1600}
                 className="size-full object-cover"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[oklch(0.12_0.006_70)] to-transparent p-8 font-serif text-xl italic text-[oklch(0.97_0.006_85)]">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--scrim)] to-transparent p-8 font-serif text-xl italic text-on-media">
                 {c.about.quote}
               </figcaption>
             </figure>
