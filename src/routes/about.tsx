@@ -37,19 +37,23 @@ function About() {
           alt={c.home.skylineAlt}
           width={1920}
           height={1088}
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full object-cover [filter:var(--hero-media-filter)]"
         />
-        <div className="absolute inset-0 bg-[oklch(0.12_0.006_70/0.78)]" aria-hidden />
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: "var(--gradient-veil)" }}
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-[1400px] px-6 pb-24 pt-40 lg:px-10 lg:pb-32 lg:pt-52">
           <p className="eyebrow rise text-gold">{c.about.eyebrow}</p>
-          <h1 className="rise mt-8 max-w-4xl text-[clamp(2.6rem,7vw,6rem)] font-extrabold leading-[0.95] text-[oklch(0.97_0.006_85)]">
+          <h1 className="rise mt-8 max-w-4xl text-[clamp(2.6rem,7vw,6rem)] font-extrabold leading-[0.95] text-hero-fg">
             {c.about.heroLine1}
             <br />
             <span className="font-serif font-normal italic text-gold-gradient">
               {c.about.heroLine2}
             </span>
           </h1>
-          <p className="rise mt-10 max-w-xl text-base leading-relaxed text-[oklch(0.97_0.006_85/0.72)]">
+          <p className="rise mt-10 max-w-xl text-base leading-relaxed text-hero-fg/75">
             {c.about.heroBody}
           </p>
         </div>
@@ -105,7 +109,7 @@ function About() {
                 height={1600}
                 className="size-full object-cover"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[oklch(0.12_0.006_70)] to-transparent p-8 font-serif text-xl italic text-[oklch(0.97_0.006_85)]">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--scrim)] to-transparent p-8 font-serif text-xl italic text-on-media">
                 {c.about.quote}
               </figcaption>
             </figure>
