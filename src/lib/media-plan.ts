@@ -11,8 +11,13 @@
  */
 
 import storyBeauty from "@/assets/story-beauty.jpg";
+import storyCosmetics from "@/assets/story-cosmetics.jpg";
 import storyDining from "@/assets/story-dining.jpg";
+import storyJewelry from "@/assets/story-jewelry.jpg";
+import storyLatin from "@/assets/story-latin.jpg";
 import storyRetail from "@/assets/story-retail.jpg";
+import storyRobata from "@/assets/story-robata.jpg";
+import storyWatch from "@/assets/story-watch.jpg";
 
 import { films, type Film } from "./films";
 import { stories, type Story } from "./stories";
