@@ -281,9 +281,11 @@ export const en = {
 
 type DeepMutable<T> = T extends readonly (infer U)[]
   ? DeepMutable<U>[]
-  : T extends object
-    ? { -readonly [K in keyof T]: DeepMutable<T[K]> }
-    : T;
+  : T extends string
+    ? string
+    : T extends object
+      ? { -readonly [K in keyof T]: DeepMutable<T[K]> }
+      : T;
 
 export type Content = DeepMutable<typeof en>;
 
