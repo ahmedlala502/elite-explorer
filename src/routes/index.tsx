@@ -8,11 +8,11 @@ import textureNoir from "@/assets/texture-noir.jpg";
 import { CampaignFilms } from "@/components/site/CampaignFilms";
 import { ClientMarquee } from "@/components/site/ClientMarquee";
 import { Reveal } from "@/components/site/Reveal";
+import { StoryMedia } from "@/components/site/StoryMedia";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
 /** Brand files exported for dark backgrounds need a dark plate. */
-const onDark = (url: string) => url.includes("new_brand_logo");
 import { featuredStories } from "@/lib/stories";
 
 export const Route = createFileRoute("/")({
