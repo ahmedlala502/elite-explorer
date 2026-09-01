@@ -122,7 +122,7 @@ function SuccessStories() {
                     : "border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
                 }`}
               >
-                {m === "All" ? c.categories.All : term("markets", m)}
+                {m === "All" ? c.categories["All"] : term("markets", m)}
               </button>
             ))}
           </div>
