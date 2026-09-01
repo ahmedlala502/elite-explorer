@@ -44,8 +44,62 @@
   --font-arabic: "Almarai", "Plus Jakarta Sans", sans-serif;
 }
 
+/* ---------- light (default) ---------- */
 :root {
   --radius: 0.25rem;
+
+  --ink: oklch(0.965 0.006 85);
+  --background: oklch(0.988 0.004 85);
+  --foreground: oklch(0.19 0.008 70);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.008 70);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.008 70);
+
+  /* champagne gold — deepened for contrast on light surfaces */
+  --gold: oklch(0.58 0.096 68);
+  --gold-soft: oklch(0.7 0.096 78);
+  --gold-deep: oklch(0.45 0.082 62);
+
+  --primary: oklch(0.58 0.096 68);
+  --primary-foreground: oklch(0.985 0.004 85);
+
+  --secondary: oklch(0.94 0.006 82);
+  --secondary-foreground: oklch(0.19 0.008 70);
+  --muted: oklch(0.94 0.006 82);
+  --muted-foreground: oklch(0.46 0.01 72);
+  --accent: oklch(0.92 0.012 80);
+  --accent-foreground: oklch(0.19 0.008 70);
+
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.985 0.004 85);
+
+  --border: oklch(0.19 0.008 70 / 14%);
+  --input: oklch(0.19 0.008 70 / 20%);
+  --ring: oklch(0.58 0.096 68 / 40%);
+
+  /* logos ship as black artwork on white — blend the white away */
+  --logo-filter: none;
+  --logo-blend: multiply;
+  --logo-opacity: 0.72;
+  --logo-opacity-hover: 1;
+
+  --gradient-gold: linear-gradient(100deg, var(--gold-deep), var(--gold-soft) 45%, var(--gold) 100%);
+  --gradient-veil: linear-gradient(
+    to var(--veil-to, right),
+    oklch(0.16 0.008 70 / 0.92) 0%,
+    oklch(0.16 0.008 70 / 0.72) 42%,
+    oklch(0.16 0.008 70 / 0.2) 78%,
+    transparent 100%
+  );
+  --shadow-lux: 0 40px 90px -55px oklch(0.2 0.01 70 / 0.35);
+  --shadow-gold: 0 22px 60px -30px color-mix(in oklab, var(--gold) 30%, transparent);
+}
+
+/* ---------- dark ---------- */
+.dark {
+  color-scheme: dark;
 
   --ink: oklch(0.13 0.004 70);
   --background: oklch(0.145 0.005 70);
@@ -56,7 +110,6 @@
   --popover: oklch(0.187 0.006 72);
   --popover-foreground: oklch(0.968 0.006 85);
 
-  /* champagne gold */
   --gold: oklch(0.79 0.098 84);
   --gold-soft: oklch(0.89 0.062 88);
   --gold-deep: oklch(0.62 0.096 72);
@@ -78,9 +131,14 @@
   --input: oklch(1 0 0 / 16%);
   --ring: oklch(0.79 0.098 84 / 45%);
 
-  --gradient-gold: linear-gradient(100deg, var(--gold-deep), var(--gold-soft) 45%, var(--gold) 100%);
+  /* invert the artwork, then screen the (now black) plate into the dark surface */
+  --logo-filter: invert(1);
+  --logo-blend: screen;
+  --logo-opacity: 0.7;
+  --logo-opacity-hover: 1;
+
   --gradient-veil: linear-gradient(
-    90deg,
+    to var(--veil-to, right),
     var(--ink) 0%,
     color-mix(in oklab, var(--ink) 86%, transparent) 42%,
     color-mix(in oklab, var(--ink) 20%, transparent) 78%,
@@ -90,8 +148,9 @@
   --shadow-gold: 0 22px 60px -28px color-mix(in oklab, var(--gold) 42%, transparent);
 }
 
-.dark {
-  color-scheme: dark;
+/* right-to-left: mirror the directional veil and reveal lines */
+[dir="rtl"] {
+  --veil-to: left;
 }
 
 @layer base {
