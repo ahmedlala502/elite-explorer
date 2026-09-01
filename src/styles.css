@@ -312,3 +312,10 @@
     animation: none !important;
   }
 }
+
+/* Instrument Serif has no Arabic coverage — fall back to Almarai */
+[lang="ar"] .font-serif,
+[lang="ar"] .italic {
+  font-family: var(--font-arabic);
+  font-style: normal;
+}
