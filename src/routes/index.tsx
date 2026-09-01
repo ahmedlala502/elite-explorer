@@ -281,16 +281,11 @@ function Home() {
             {featuredStories.map((story, i) => (
               <Reveal key={story.brand} delay={i * 110} className="bg-surface-alt">
                 <article className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-card/60">
-                  <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-28 w-full group-hover:logo-tile-hover`}>
-                    <img
-                      src={story.logo}
-                      alt={`${story.brand} logo`}
-                      loading="lazy"
-                      width={260}
-                      height={112}
-                      className="logo-img-color max-h-20"
-                    />
-                  </div>
+                  <StoryMedia
+                    story={story}
+                    className="aspect-[16/10]"
+                    label={`${story.brand} campaign film`}
+                  />
                   <div className="mt-10">
                     <h3 className="text-2xl font-extrabold tracking-tight">{story.brand}</h3>
                     <p className="eyebrow mt-3">{term("markets", story.market)}</p>
