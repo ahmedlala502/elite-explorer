@@ -10,6 +10,9 @@ import { ClientMarquee } from "@/components/site/ClientMarquee";
 import { Reveal } from "@/components/site/Reveal";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
+
+/** Brand files exported for dark backgrounds need a dark plate. */
+const onDark = (url: string) => url.includes("new_brand_logo");
 import { featuredStories } from "@/lib/stories";
 
 export const Route = createFileRoute("/")({
@@ -278,7 +281,7 @@ function Home() {
             {featuredStories.map((story, i) => (
               <Reveal key={story.brand} delay={i * 110} className="bg-[color:var(--ink)]">
                 <article className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-card/60">
-                  <div className="logo-tile h-28 w-full group-hover:logo-tile-hover">
+                  <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-28 w-full group-hover:logo-tile-hover`}>
                     <img
                       src={story.logo}
                       alt={`${story.brand} logo`}

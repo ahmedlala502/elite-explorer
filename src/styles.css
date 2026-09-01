@@ -238,6 +238,21 @@
     box-shadow 0.5s ease;
 }
 
+/* Some brand files are white artwork exported for dark backgrounds. */
+@utility logo-tile-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: oklch(0.16 0.008 70);
+  border: 1px solid oklch(1 0 0 / 10%);
+  border-radius: calc(var(--radius) * 2);
+  padding: 1rem 1.25rem;
+  transition:
+    border-color 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
 @utility logo-tile-hover {
   border-color: color-mix(in oklab, var(--gold) 55%, transparent);
   transform: translateY(-2px);

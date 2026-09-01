@@ -7,6 +7,9 @@ import { CampaignFilms } from "@/components/site/CampaignFilms";
 import { Reveal } from "@/components/site/Reveal";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
+
+/** Brand files exported for dark backgrounds need a dark plate. */
+const onDark = (url: string) => url.includes("new_brand_logo");
 import { featuredStories, stories, storyMarkets } from "@/lib/stories";
 
 export const Route = createFileRoute("/success-stories")({
@@ -77,7 +80,7 @@ function SuccessStories() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-between p-8">
-                    <div className="logo-tile h-28 w-full group-hover:logo-tile-hover">
+                    <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-28 w-full group-hover:logo-tile-hover`}>
                       <img
                         src={story.logo}
                         alt={`${story.brand} logo`}
@@ -135,7 +138,7 @@ function SuccessStories() {
                 className="bg-background"
               >
                 <article className="group flex h-full flex-col gap-6 p-6 transition-colors duration-500 hover:bg-card/60">
-                  <div className="logo-tile h-32 w-full group-hover:logo-tile-hover">
+                  <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-32 w-full group-hover:logo-tile-hover`}>
                     <img
                       src={story.logo}
                       alt={`${story.brand} logo`}
