@@ -1,0 +1,569 @@
+/** Site copy in English and Arabic. `en` defines the shape; `ar` must match it. */
+
+export const en = {
+  meta: {
+    langName: "العربية",
+    langShort: "AR",
+  },
+  nav: {
+    home: "Home",
+    stories: "Success stories",
+    clients: "Our clients",
+    about: "About",
+    contact: "Contact",
+    cta: "Start a campaign",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    theme: "Switch theme",
+    language: "Switch language",
+  },
+  footer: {
+    blurb:
+      "Influencer marketing for premium brands. We launch, run and measure your campaigns with 24/7 live support across 52+ countries.",
+    tagline: "Niche mastery redefined",
+    explore: "Explore",
+    company: "Company",
+    aboutUs: "About us",
+    contactUs: "Contact us",
+    markets: "Markets",
+    marketsBody: "Saudi Arabia · Kuwait · United Arab Emirates · Qatar · Bahrain — and 47 more.",
+    rights: "All rights reserved.",
+  },
+  common: {
+    countries: "Countries",
+    reach: "Follower reach",
+    creators: "Creators",
+    brandsServed: "Brands served",
+    followers: "Followers",
+    years: "Years",
+    campaigns: "Campaigns delivered",
+    countriesReached: "Countries reached",
+    yearsRunning: "Years running campaigns",
+    viewClients: "View our clients",
+    allStories: "See all stories",
+    startCampaign: "Start a campaign",
+    seeStories: "See success stories",
+    play: "Play the film",
+    pause: "Pause the film",
+  },
+  markets: {
+    Egypt: "Egypt",
+    Kuwait: "Kuwait",
+    Qatar: "Qatar",
+    "Saudi Arabia": "Saudi Arabia",
+    "United Arab Emirates": "United Arab Emirates",
+    Bahrain: "Bahrain",
+  } as Record<string, string>,
+  categories: {
+    All: "All",
+    Restaurant: "Restaurant",
+    "Café": "Café",
+    Fashion: "Fashion",
+    Beauty: "Beauty",
+  } as Record<string, string>,
+  home: {
+    title: "ELITƎ — Niche mastery, redefined",
+    description:
+      "ELITƎ connects premium brands with the creators their audience already trusts, then runs and measures the whole campaign across 52+ countries.",
+    eyebrow: "Influencer marketing · 52+ countries",
+    heroLine1: "Niche mastery,",
+    heroLine2: "redefined.",
+    heroBody:
+      "ELITƎ connects premium brands with the creators their audience already trusts, then runs and measures the whole campaign for you.",
+    heroAlt: "Guests at an exclusive rooftop dinner overlooking a Gulf skyline",
+    trusted: "Trusted by category leaders across the Gulf and beyond",
+    whyEyebrow: "Why ELITƎ",
+    whyLine1: "Exceptional results need",
+    whyLine2: "exceptional strategy.",
+    whyBody:
+      "Ten years of relationships with elite influencers and high-end brands, put to work on your campaign.",
+    pillars: [
+      {
+        title: "A decade of excellence",
+        body: "Over ten years running influencer campaigns for high-end brands. The playbook is already written.",
+      },
+      {
+        title: "Global reach",
+        body: "A presence in more than 52 countries connects your brand with the right audience, wherever it lives.",
+      },
+      {
+        title: "Elite partnerships",
+        body: "Exclusive relationships with elite creators and premium brands mean access others simply don't have.",
+      },
+      {
+        title: "Measurable results",
+        body: "Every campaign is tracked end to end, so growth is something you can see, not something you're told.",
+      },
+    ],
+    servicesEyebrow: "Service solutions",
+    servicesLine1: "Everything a campaign needs,",
+    servicesLine2: "under one roof.",
+    servicesBody:
+      "From finding the right creator to proving the return — four services that run as one process.",
+    services: [
+      {
+        title: "Influencer discovery",
+        body: "Tap into our network to find creators who match your brand and audience, lifting engagement and affinity.",
+      },
+      {
+        title: "Campaign strategy",
+        body: "Design campaigns with our strategists around your goals, markets and budget for results that resonate.",
+      },
+      {
+        title: "Content creation",
+        body: "Creators produce compelling content in their own voice, reviewed against your brand guidelines.",
+      },
+      {
+        title: "Performance tracking",
+        body: "Actionable insight into coverage and return, so strategy is optimised while the campaign is live.",
+      },
+    ],
+    filmEyebrow: "Campaigns on film",
+    filmBody: "Content shot in the creator's own voice, on brand, on schedule.",
+    filmAlt: "A creator filming a plated dish in a dimly lit fine-dining restaurant",
+    processEyebrow: "The process",
+    processLine1: "Four steps.",
+    processLine2: "One clear line to results.",
+    step: "Step",
+    steps: [
+      {
+        title: "Match",
+        body: "We shortlist creators from our network whose audience genuinely overlaps with yours.",
+      },
+      {
+        title: "Plan",
+        body: "Objectives, budget, markets and deliverables become a campaign brief everyone signs off.",
+      },
+      {
+        title: "Create",
+        body: "Creators produce content in their own voice, reviewed against your brand guidelines.",
+      },
+      {
+        title: "Measure",
+        body: "Live coverage tracking and post-campaign reporting show exactly what the spend returned.",
+      },
+    ],
+    storiesEyebrow: "Success in action",
+    storiesLine1: "Stories from",
+    storiesLine2: "our clients.",
+    reelsEyebrow: "Campaign films",
+    reelsLine1: "The work,",
+    reelsLine2: "in motion.",
+    dashEyebrow: "The ELITƎ dashboard",
+    dashLine1: "Your whole campaign,",
+    dashLine2: "on one screen.",
+    dashPoints: [
+      "Track every creator from pending to covered",
+      "Story, post and video coverage counted automatically",
+      "Wishlists, branches and scanner tools built in",
+      "24/7 live support behind every campaign",
+    ],
+    ctaLine1: "Ready to elevate",
+    ctaLine2: "your brand?",
+    ctaBody:
+      "Tell us the goal. We'll come back with the creators, the plan and the numbers — wherever in the world you are.",
+    skylineAlt: "Gulf city skyline at night",
+  },
+  about: {
+    title: "About ELITƎ — A decade of influence in 52+ countries",
+    description:
+      "ELITƎ designs bespoke influencer campaigns for the region's most discerning brands, with over ten years of relationships across 52+ countries.",
+    eyebrow: "About us",
+    heroLine1: "A decade of influence,",
+    heroLine2: "in more than 52 countries.",
+    heroBody:
+      "With over ten years of experience and relationships across more than 52 countries, ELITƎ delivers bespoke influencer campaigns for the region's most discerning brands.",
+    missionEyebrow: "Our mission",
+    missionTitle: "Simple, yet powerful.",
+    missionBody:
+      "To design tailored influencer strategies that amplify your brand message, connect with the right creators and deliver measurable return.",
+    approachEyebrow: "Our approach",
+    approachTitle: "Exceptional strategies.",
+    approachBody:
+      "Exceptional results demand exceptional strategy. We connect our clients directly with elite talent and high-end brands through bespoke global campaigns.",
+    quote: "“The right creator, in the right market, at the right moment.”",
+    figureAlt: "A creator capturing a fine-dining dish for a brand campaign",
+    whyEyebrow: "Why choose ELITƎ",
+    whyLine1: "Five reasons",
+    whyLine2: "brands stay.",
+    reasons: [
+      {
+        title: "Decade of excellence",
+        body: "With over ten years in the industry, ELITƎ brings deep knowledge and expertise to every campaign we undertake.",
+      },
+      {
+        title: "Global reach",
+        body: "Our presence in over 52 countries connects brands with influencers and audiences on a global scale.",
+      },
+      {
+        title: "Elite partnerships",
+        body: "Exclusive relationships with high-end brands and elite influencers give our clients access to the best talent worldwide.",
+      },
+      {
+        title: "Measurable results",
+        body: "We are committed to results that drive real business growth and a return you can point to.",
+      },
+      {
+        title: "Exceptional quality",
+        body: "From conception to execution, we hold the highest standards of quality and professionalism throughout.",
+      },
+    ],
+    ctaLine1: "Let's talk about",
+    ctaLine2: "your next campaign.",
+    ctaBody:
+      "Tell us what you want to achieve. We will assemble the creator roster, the strategy and the numbers.",
+  },
+  clients: {
+    title: "Our clients — ELITƎ influencer marketing roster",
+    description:
+      "Luxury, hospitality and lifestyle brands across the Gulf choose ELITƎ to reach their audience. Browse the roster.",
+    eyebrow: "Our clients",
+    heroLine1: "The brands",
+    heroLine2: "we work with.",
+    heroBody:
+      "Luxury, hospitality and lifestyle brands across the Gulf choose ELITƎ to reach their audience.",
+    roster: "The roster",
+    brands: "brands",
+    search: "Search clients",
+    emptyTitle: "No match for that name.",
+    emptyBody: "Clear the search to see the full roster.",
+    ctaLine1: "Your brand",
+    ctaLine2: "belongs here.",
+    ctaButton: "Become a client",
+  },
+  stories: {
+    title: "Success stories — ELITƎ campaigns, creators and numbers",
+    description:
+      "Real ELITƎ campaigns with real creators and real numbers. Filter influencer marketing case studies by category and market.",
+    eyebrow: "Success in action",
+    heroLine1: "Stories from",
+    heroLine2: "our clients.",
+    heroBody:
+      "Real campaigns, real creators, real numbers. Filter by category to find work close to yours.",
+    featured: "Featured work",
+    filmsEyebrow: "Campaign films",
+    filmsLine1: "Watch the",
+    filmsLine2: "campaigns.",
+    ctaLine1: "Your campaign",
+    ctaLine2: "next.",
+  },
+  contact: {
+    title: "Start a campaign — Contact ELITƎ",
+    description:
+      "Tell ELITƎ your goal and market. We come back with the creator roster, the campaign plan and the numbers.",
+    eyebrow: "Start a campaign",
+    heroLine1: "Tell us the goal.",
+    heroLine2: "We'll bring the numbers.",
+    heroBody:
+      "Share your brand, market and objective. We come back with the creator roster, the plan and the projected reach — usually within two working days.",
+    points: [
+      "85K+ creators across 52+ countries",
+      "Campaign management with 24/7 live support",
+      "Coverage tracking and end-of-campaign reporting",
+    ],
+    fields: {
+      name: "Full name",
+      namePh: "Your name",
+      brand: "Brand",
+      brandPh: "Brand or company",
+      email: "Email",
+      emailPh: "you@brand.com",
+      market: "Market",
+      marketPh: "Saudi Arabia, Kuwait, UAE…",
+      goal: "Your goal",
+      goalPh: "What are you launching, and what does success look like?",
+    },
+    submit: "Send the brief",
+    sentTitle: "Brief received.",
+    sentBody: "Our team will be in touch shortly with creators and a plan for your market.",
+  },
+} as const;
+
+type DeepMutable<T> = T extends readonly (infer U)[]
+  ? DeepMutable<U>[]
+  : T extends string
+    ? string
+    : T extends object
+      ? { -readonly [K in keyof T]: DeepMutable<T[K]> }
+      : T;
+
+export type Content = DeepMutable<typeof en>;
+
+export const ar: Content = {
+  meta: {
+    langName: "English",
+    langShort: "EN",
+  },
+  nav: {
+    home: "الرئيسية",
+    stories: "قصص النجاح",
+    clients: "عملاؤنا",
+    about: "من نحن",
+    contact: "اتصل بنا",
+    cta: "ابدأ حملتك",
+    openMenu: "افتح القائمة",
+    closeMenu: "أغلق القائمة",
+    theme: "تغيير المظهر",
+    language: "تغيير اللغة",
+  },
+  footer: {
+    blurb:
+      "تسويق عبر المؤثرين للعلامات الفاخرة. نطلق حملاتك وندير أدائها ونقيس نتائجها بدعم مباشر على مدار الساعة في أكثر من ٥٢ دولة.",
+    tagline: "إتقان التخصص بمفهوم جديد",
+    explore: "تجول في الموقع",
+    company: "الشركة",
+    aboutUs: "من نحن",
+    contactUs: "تواصل معنا",
+    markets: "الأسواق",
+    marketsBody: "السعودية · الكويت · الإمارات · قطر · البحرين — و٤٧ دولة أخرى.",
+    rights: "جميع الحقوق محفوظة.",
+  },
+  common: {
+    countries: "دولة",
+    reach: "إجمالي المتابعين",
+    creators: "مبدع ومؤثر",
+    brandsServed: "علامة تجارية",
+    followers: "المتابعون",
+    years: "سنوات",
+    campaigns: "حملة منفذة",
+    countriesReached: "دولة نغطيها",
+    yearsRunning: "سنوات في إدارة الحملات",
+    viewClients: "تعرف على عملائنا",
+    allStories: "كل قصص النجاح",
+    startCampaign: "ابدأ حملتك",
+    seeStories: "شاهد قصص النجاح",
+    play: "تشغيل الفيلم",
+    pause: "إيقاف الفيلم",
+  },
+  markets: {
+    Egypt: "مصر",
+    Kuwait: "الكويت",
+    Qatar: "قطر",
+    "Saudi Arabia": "المملكة العربية السعودية",
+    "United Arab Emirates": "الإمارات العربية المتحدة",
+    Bahrain: "البحرين",
+  },
+  categories: {
+    All: "الكل",
+    Restaurant: "مطاعم",
+    "Café": "مقاهي",
+    Fashion: "أزياء",
+    Beauty: "تجميل",
+  },
+  home: {
+    title: "إيليت — إتقان التخصص بمفهوم جديد",
+    description:
+      "تربط إيليت العلامات الفاخرة بالمؤثرين الذين يثق بهم جمهورها، ثم تدير الحملة كاملة وتقيس نتائجها في أكثر من ٥٢ دولة.",
+    eyebrow: "تسويق عبر المؤثرين · أكثر من ٥٢ دولة",
+    heroLine1: "إتقان التخصص،",
+    heroLine2: "بمفهوم جديد.",
+    heroBody:
+      "تربط إيليت العلامات الفاخرة بالمؤثرين الذين يثق بهم جمهورها بالفعل، ثم تدير الحملة كاملة وتقيس نتائجها بالنيابة عنك.",
+    heroAlt: "ضيوف في عشاء خاص على سطح يطل على أفق مدينة خليجية",
+    trusted: "تثق بنا العلامات الرائدة في الخليج وخارجه",
+    whyEyebrow: "لماذا إيليت",
+    whyLine1: "النتائج الاستثنائية تحتاج",
+    whyLine2: "استراتيجية استثنائية.",
+    whyBody: "عشر سنوات من العلاقات مع نخبة المؤثرين والعلامات الفاخرة، موظّفة في خدمة حملتك.",
+    pillars: [
+      {
+        title: "عقد من التميز",
+        body: "أكثر من عشر سنوات في إدارة حملات المؤثرين للعلامات الفاخرة. الخطة جاهزة ومُجرّبة.",
+      },
+      {
+        title: "انتشار عالمي",
+        body: "حضورنا في أكثر من ٥٢ دولة يربط علامتك بالجمهور الصحيح، أينما كان.",
+      },
+      {
+        title: "شراكات نخبوية",
+        body: "علاقات حصرية مع نخبة المبدعين والعلامات الفاخرة تمنحك وصولاً لا يملكه غيرك.",
+      },
+      {
+        title: "نتائج قابلة للقياس",
+        body: "نتابع كل حملة من بدايتها إلى نهايتها، لترى النمو بعينك لا أن تسمع عنه.",
+      },
+    ],
+    servicesEyebrow: "حلول متكاملة",
+    servicesLine1: "كل ما تحتاجه الحملة،",
+    servicesLine2: "تحت سقف واحد.",
+    servicesBody:
+      "من اختيار المؤثر المناسب إلى إثبات العائد — أربع خدمات تعمل كعملية واحدة متصلة.",
+    services: [
+      {
+        title: "اختيار المؤثرين",
+        body: "نفتح لك شبكتنا لاختيار مبدعين يناسبون علامتك وجمهورك، فيرتفع التفاعل والولاء.",
+      },
+      {
+        title: "استراتيجية الحملة",
+        body: "نصمم الحملة مع خبرائنا حسب أهدافك وأسواقك وميزانيتك لتحقيق نتائج ملموسة.",
+      },
+      {
+        title: "إنتاج المحتوى",
+        body: "ينتج المبدعون محتوى مؤثراً بأسلوبهم الخاص، مع مراجعته وفق دليل علامتك.",
+      },
+      {
+        title: "قياس الأداء",
+        body: "رؤية واضحة للتغطية والعائد، لتحسين الاستراتيجية أثناء عمل الحملة.",
+      },
+    ],
+    filmEyebrow: "الحملات على الشاشة",
+    filmBody: "محتوى مصوَّر بصوت المبدع نفسه، متوافق مع علامتك، وفي الموعد.",
+    filmAlt: "مبدع يصور طبقاً في مطعم فاخر بإضاءة خفيفة",
+    processEyebrow: "كيف نعمل",
+    processLine1: "أربع خطوات.",
+    processLine2: "خط واحد واضح إلى النتائج.",
+    step: "خطوة",
+    steps: [
+      {
+        title: "المواءمة",
+        body: "نختار من شبكتنا مبدعين يتقاطع جمهورهم فعلياً مع جمهورك.",
+      },
+      {
+        title: "التخطيط",
+        body: "تتحول الأهداف والميزانية والأسواق والمخرجات إلى موجز حملة معتمد من الجميع.",
+      },
+      {
+        title: "الإنتاج",
+        body: "ينتج المبدعون المحتوى بأسلوبهم، مع مراجعته وفق دليل علامتك.",
+      },
+      {
+        title: "القياس",
+        body: "متابعة حية للتغطية وتقرير ختامي يوضح بدقة عائد ما أنفقته.",
+      },
+    ],
+    storiesEyebrow: "النجاح على أرض الواقع",
+    storiesLine1: "قصص من",
+    storiesLine2: "عملائنا.",
+    reelsEyebrow: "أفلام الحملات",
+    reelsLine1: "الأعمال،",
+    reelsLine2: "في حركة.",
+    dashEyebrow: "منصة إيليت",
+    dashLine1: "حملتك بالكامل،",
+    dashLine2: "على شاشة واحدة.",
+    dashPoints: [
+      "تابع كل مؤثر من قيد الانتظار إلى تمت التغطية",
+      "حصر تلقائي لتغطية الستوري والمنشورات والفيديو",
+      "قوائم التمنيات والفروع وأدوات المسح مدمجة",
+      "دعم مباشر على مدار الساعة خلف كل حملة",
+    ],
+    ctaLine1: "جاهز للارتقاء",
+    ctaLine2: "بعلامتك؟",
+    ctaBody:
+      "أخبرنا بالهدف، ونعود إليك بالمؤثرين والخطة والأرقام — في أي مكان في العالم.",
+    skylineAlt: "أفق مدينة خليجية ليلاً",
+  },
+  about: {
+    title: "من نحن — إيليت وعقد من التأثير في أكثر من ٥٢ دولة",
+    description:
+      "تصمم إيليت حملات مؤثرين مخصصة لأكثر العلامات تميزاً في المنطقة، بخبرة تفوق عشر سنوات وعلاقات في أكثر من ٥٢ دولة.",
+    eyebrow: "من نحن",
+    heroLine1: "عقد من التأثير،",
+    heroLine2: "في أكثر من ٥٢ دولة.",
+    heroBody:
+      "بخبرة تفوق عشر سنوات وعلاقات في أكثر من ٥٢ دولة، تقدم إيليت حملات مؤثرين مخصصة لأكثر العلامات تميزاً في المنطقة.",
+    missionEyebrow: "مهمتنا",
+    missionTitle: "بسيطة، لكنها فعّالة.",
+    missionBody:
+      "تصميم استراتيجيات مؤثرين مخصصة تضخّم رسالة علامتك، وتربطها بالمبدعين المناسبين، وتحقق عائداً قابلاً للقياس.",
+    approachEyebrow: "منهجنا",
+    approachTitle: "استراتيجيات استثنائية.",
+    approachBody:
+      "النتائج الاستثنائية تتطلب استراتيجية استثنائية. نربط عملاءنا مباشرة بنخبة المبدعين والعلامات الفاخرة عبر حملات عالمية مخصصة.",
+    quote: "«المبدع المناسب، في السوق المناسب، في اللحظة المناسبة.»",
+    figureAlt: "مبدع يصور طبقاً فاخراً لحملة علامة تجارية",
+    whyEyebrow: "لماذا تختار إيليت",
+    whyLine1: "خمسة أسباب",
+    whyLine2: "تجعل العلامات تبقى.",
+    reasons: [
+      {
+        title: "عقد من التميز",
+        body: "بخبرة تفوق عشر سنوات في المجال، تقدم إيليت معرفة عميقة في كل حملة تتولاها.",
+      },
+      {
+        title: "انتشار عالمي",
+        body: "حضورنا في أكثر من ٥٢ دولة يربط العلامات بالمؤثرين والجماهير على نطاق عالمي.",
+      },
+      {
+        title: "شراكات نخبوية",
+        body: "علاقات حصرية مع العلامات الفاخرة ونخبة المؤثرين تمنح عملاءنا وصولاً لأفضل المواهب عالمياً.",
+      },
+      {
+        title: "نتائج قابلة للقياس",
+        body: "نلتزم بنتائج تصنع نمواً حقيقياً للأعمال وعائداً يمكنك الإشارة إليه.",
+      },
+      {
+        title: "جودة استثنائية",
+        body: "من الفكرة إلى التنفيذ، نحافظ على أعلى معايير الجودة والاحترافية.",
+      },
+    ],
+    ctaLine1: "لنتحدث عن",
+    ctaLine2: "حملتك القادمة.",
+    ctaBody: "أخبرنا بما تريد تحقيقه، ونجمع لك قائمة المبدعين والاستراتيجية والأرقام.",
+  },
+  clients: {
+    title: "عملاؤنا — قائمة عملاء إيليت للتسويق عبر المؤثرين",
+    description:
+      "علامات الفخامة والضيافة وأنماط الحياة في الخليج تختار إيليت للوصول إلى جمهورها. تعرف على القائمة.",
+    eyebrow: "عملاؤنا",
+    heroLine1: "العلامات",
+    heroLine2: "التي نعمل معها.",
+    heroBody:
+      "علامات الفخامة والضيافة وأنماط الحياة في الخليج تختار إيليت للوصول إلى جمهورها.",
+    roster: "القائمة",
+    brands: "علامة",
+    search: "ابحث عن عميل",
+    emptyTitle: "لا نتائج مطابقة لهذا الاسم.",
+    emptyBody: "امسح البحث لعرض القائمة كاملة.",
+    ctaLine1: "علامتك",
+    ctaLine2: "مكانها هنا.",
+    ctaButton: "كن عميلاً",
+  },
+  stories: {
+    title: "قصص النجاح — حملات إيليت ومبدعوها وأرقامها",
+    description:
+      "حملات حقيقية بمبدعين حقيقيين وأرقام حقيقية. صفِّ دراسات الحالة حسب الفئة والسوق.",
+    eyebrow: "النجاح على أرض الواقع",
+    heroLine1: "قصص من",
+    heroLine2: "عملائنا.",
+    heroBody: "حملات حقيقية ومبدعون حقيقيون وأرقام حقيقية. صفِّ حسب الفئة لتجد عملاً قريباً من مجالك.",
+    featured: "أعمال مختارة",
+    filmsEyebrow: "أفلام الحملات",
+    filmsLine1: "شاهد",
+    filmsLine2: "الحملات.",
+    ctaLine1: "حملتك",
+    ctaLine2: "هي التالية.",
+  },
+  contact: {
+    title: "ابدأ حملتك — تواصل مع إيليت",
+    description:
+      "أخبر إيليت بهدفك وسوقك، ونعود إليك بقائمة المبدعين وخطة الحملة والأرقام.",
+    eyebrow: "ابدأ حملتك",
+    heroLine1: "أخبرنا بالهدف.",
+    heroLine2: "ونحن نأتي بالأرقام.",
+    heroBody:
+      "شاركنا علامتك وسوقك وهدفك، ونعود إليك بقائمة المبدعين والخطة والوصول المتوقع — عادة في يومي عمل.",
+    points: [
+      "أكثر من ٨٥ ألف مبدع في أكثر من ٥٢ دولة",
+      "إدارة كاملة للحملة بدعم مباشر على مدار الساعة",
+      "متابعة التغطية وتقرير ختامي للحملة",
+    ],
+    fields: {
+      name: "الاسم الكامل",
+      namePh: "اسمك",
+      brand: "العلامة التجارية",
+      brandPh: "العلامة أو الشركة",
+      email: "البريد الإلكتروني",
+      emailPh: "you@brand.com",
+      market: "السوق",
+      marketPh: "السعودية، الكويت، الإمارات…",
+      goal: "هدفك",
+      goalPh: "ما الذي تطلقه، وكيف يبدو النجاح بالنسبة لك؟",
+    },
+    submit: "أرسل الموجز",
+    sentTitle: "تم استلام الموجز.",
+    sentBody: "سيتواصل فريقنا معك قريباً بالمبدعين وخطة مناسبة لسوقك.",
+  },
+};
+
+export const content = { en: en as unknown as Content, ar };
+export type Lang = keyof typeof content;

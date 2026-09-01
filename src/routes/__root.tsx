@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
+import { I18nProvider } from "../lib/i18n";
+import { ThemeProvider } from "../lib/theme";
 
 function NotFoundComponent() {
   return (
@@ -106,11 +108,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const initScript = `(function(){try{var t=localStorage.getItem("elite-theme")||"dark";var l=localStorage.getItem("elite-lang")||"en";var r=document.documentElement;r.classList.toggle("dark",t==="dark");r.style.colorScheme=t;r.setAttribute("lang",l);r.setAttribute("dir",l==="ar"?"rtl":"ltr");}catch(e){}})();`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" dir="ltr" className="dark">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: initScript }} />
       </head>
       <body>
         {children}
@@ -125,13 +130,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteHeader />
-      <main className="min-h-screen">
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <ThemeProvider>
+        <I18nProvider>
+          <SiteHeader />
+          <main className="min-h-screen">
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <SiteFooter />
+        </I18nProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
+
 

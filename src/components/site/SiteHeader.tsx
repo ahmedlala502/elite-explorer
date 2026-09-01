@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { EliteWordmark } from "@/components/brand/EliteWordmark";
-
-const nav = [
-  { to: "/", label: "Home" },
-  { to: "/success-stories", label: "Success stories" },
-  { to: "/clients", label: "Our clients" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
-] as const;
+import { SiteControls } from "@/components/site/SiteControls";
+import { useI18n } from "@/lib/i18n";
 
 export function SiteHeader() {
+  const { c } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const nav = [
+    { to: "/", label: c.nav.home },
+    { to: "/success-stories", label: c.nav.stories },
+    { to: "/clients", label: c.nav.clients },
+    { to: "/about", label: c.nav.about },
+    { to: "/contact", label: c.nav.contact },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,8 +34,8 @@ export function SiteHeader() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-8 px-6 lg:px-10">
-        <Link to="/" aria-label="ELITƎ home" className="group flex items-center gap-3">
+      <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:px-10">
+        <Link to="/" aria-label="ELITƎ" className="group flex items-center gap-3">
           <EliteWordmark className="h-4 w-auto text-foreground transition-colors duration-500 group-hover:text-gold" />
         </Link>
 
@@ -46,28 +49,32 @@ export function SiteHeader() {
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
-              <span className="absolute -bottom-2 left-0 h-px w-0 bg-gold transition-all duration-500 group-hover:w-full" />
+              <span className="absolute -bottom-2 start-0 h-px w-0 bg-gold transition-all duration-500 group-hover:w-full" />
             </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
+          <SiteControls />
           <Link
             to="/contact"
             className="rounded-full bg-[image:var(--gradient-gold)] px-6 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:-translate-y-0.5"
           >
-            Start a campaign
+            {c.nav.cta}
           </Link>
         </div>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-          className="text-foreground lg:hidden"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <SiteControls />
+          <button
+            type="button"
+            aria-label={open ? c.nav.closeMenu : c.nav.openMenu}
+            onClick={() => setOpen((v) => !v)}
+            className="text-foreground"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -90,7 +97,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-[image:var(--gradient-gold)] px-6 py-3 text-center text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-foreground"
             >
-              Start a campaign
+              {c.nav.cta}
             </Link>
           </nav>
         </div>
