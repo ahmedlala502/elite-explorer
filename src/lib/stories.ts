@@ -1,5 +1,8 @@
 /** Success stories, sourced from the ELITƎ case-study archive. */
 
+import { films } from "./films";
+
+
 export type Story = {
   brand: string;
   market: string;
