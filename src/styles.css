@@ -222,15 +222,33 @@
   mix-blend-mode: soft-light;
 }
 
-@utility logo-plate {
-  filter: var(--logo-filter);
-  mix-blend-mode: var(--logo-blend);
-  opacity: var(--logo-opacity);
-  transition: opacity 0.5s ease;
+/* Brand artwork arrives as opaque black-on-white or full-colour files.
+   A neutral light plate keeps every logo legible in both themes. */
+@utility logo-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: oklch(1 0 0);
+  border: 1px solid oklch(0.19 0.008 70 / 8%);
+  border-radius: calc(var(--radius) * 2);
+  padding: 1rem 1.25rem;
+  transition:
+    border-color 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
-@utility logo-plate-hover {
-  opacity: var(--logo-opacity-hover);
+@utility logo-tile-hover {
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lux);
+}
+
+@utility logo-img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 /* ---------- motion ---------- */
