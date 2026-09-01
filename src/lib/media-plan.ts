@@ -11,8 +11,13 @@
  */
 
 import storyBeauty from "@/assets/story-beauty.jpg";
+import storyCosmetics from "@/assets/story-cosmetics.jpg";
 import storyDining from "@/assets/story-dining.jpg";
+import storyJewelry from "@/assets/story-jewelry.jpg";
+import storyLatin from "@/assets/story-latin.jpg";
 import storyRetail from "@/assets/story-retail.jpg";
+import storyRobata from "@/assets/story-robata.jpg";
+import storyWatch from "@/assets/story-watch.jpg";
 
 import { films, type Film } from "./films";
 import { stories, type Story } from "./stories";
@@ -45,7 +50,21 @@ const fallbackPool: { key: string; src: string }[] = [
   { key: "fallback:dining", src: storyDining },
   { key: "fallback:retail", src: storyRetail },
   { key: "fallback:beauty", src: storyBeauty },
+  { key: "fallback:robata", src: storyRobata },
+  { key: "fallback:latin", src: storyLatin },
+  { key: "fallback:watch", src: storyWatch },
+  { key: "fallback:jewelry", src: storyJewelry },
+  { key: "fallback:cosmetics", src: storyCosmetics },
 ];
+
+/** Brands whose archive media is fully claimed elsewhere get a bespoke visual. */
+const brandFallback: Record<string, string> = {
+  ROBATA: "fallback:robata",
+  Coya: "fallback:latin",
+  Panerai: "fallback:watch",
+  Fred: "fallback:jewelry",
+  "Rituals Cosmetics": "fallback:cosmetics",
+};
 
 function resolve(story: Story): StoryMediaPlan {
   if (free(story.video)) {
@@ -66,6 +85,13 @@ function resolve(story: Story): StoryMediaPlan {
   if (free(story.poster)) {
     claim(story.poster);
     return { kind: "still", src: story.poster };
+  }
+
+  const key = brandFallback[story.brand];
+  const bespoke = key ? fallbackPool.find((f) => f.key === key && free(f.key)) : undefined;
+  if (bespoke) {
+    claim(bespoke.key);
+    return { kind: "still", src: bespoke.src };
   }
 
   const slot = fallbackPool.find((f) => free(f.key));
