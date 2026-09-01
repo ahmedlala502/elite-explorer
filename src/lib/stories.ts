@@ -501,7 +501,11 @@ export const stories: Story[] = [
   }
 ];
 
-export const featuredStories = stories.slice(0, 3);
+/** Featured cards lead with real campaign films. */
+export const featuredStories = [
+  ...stories.filter((s) => s.video),
+  ...stories.filter((s) => !s.video),
+].slice(0, 3);
 
 export const storyMarkets = [
   "All",
