@@ -50,7 +50,21 @@ const fallbackPool: { key: string; src: string }[] = [
   { key: "fallback:dining", src: storyDining },
   { key: "fallback:retail", src: storyRetail },
   { key: "fallback:beauty", src: storyBeauty },
+  { key: "fallback:robata", src: storyRobata },
+  { key: "fallback:latin", src: storyLatin },
+  { key: "fallback:watch", src: storyWatch },
+  { key: "fallback:jewelry", src: storyJewelry },
+  { key: "fallback:cosmetics", src: storyCosmetics },
 ];
+
+/** Brands whose archive media is fully claimed elsewhere get a bespoke visual. */
+const brandFallback: Record<string, string> = {
+  ROBATA: "fallback:robata",
+  Coya: "fallback:latin",
+  Panerai: "fallback:watch",
+  Fred: "fallback:jewelry",
+  "Rituals Cosmetics": "fallback:cosmetics",
+};
 
 function resolve(story: Story): StoryMediaPlan {
   if (free(story.video)) {
