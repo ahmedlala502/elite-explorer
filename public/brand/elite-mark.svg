@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" role="img" aria-label="ELITE monogram">
+  <!-- E -->
+  <rect x="4" y="12" width="3.5" height="40" />
+  <rect x="4" y="12" width="24" height="3.5" />
+  <rect x="4" y="30.25" width="17.5" height="3.5" />
+  <rect x="4" y="48.5" width="24" height="3.5" />
+  <!-- Ǝ -->
+  <rect x="56.5" y="12" width="3.5" height="40" />
+  <rect x="36" y="12" width="24" height="3.5" />
+  <rect x="42.5" y="30.25" width="17.5" height="3.5" />
+  <rect x="36" y="48.5" width="24" height="3.5" />
+</svg>
