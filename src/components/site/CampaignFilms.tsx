@@ -70,10 +70,10 @@ function FilmCard({ film, delay }: { film: (typeof films)[number]; delay: number
   );
 }
 
-export function CampaignFilms() {
+export function CampaignFilms({ items = films }: { items?: typeof films }) {
   return (
     <div className="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-      {films.map((film, i) => (
+      {items.map((film, i) => (
         <FilmCard key={film.brand} film={film} delay={i * 90} />
       ))}
     </div>

@@ -1,5 +1,8 @@
 /** Success stories, sourced from the ELITƎ case-study archive. */
 
+import { films } from "./films";
+
+
 export type Story = {
   brand: string;
   market: string;
@@ -501,11 +504,17 @@ export const stories: Story[] = [
   }
 ];
 
-/** Featured cards lead with real campaign films. */
-export const featuredStories = [
-  ...stories.filter((s) => s.video),
-  ...stories.filter((s) => !s.video),
-].slice(0, 3);
+/**
+ * Featured home cards never repeat media shown elsewhere on the page:
+ * they exclude brands whose film runs in the campaign-films strip.
+ */
+const filmBrands = new Set(films.map((f) => f.brand.toLowerCase()));
+
+export const featuredStories = stories
+  .filter((s) => !filmBrands.has(s.brand.toLowerCase()))
+  .filter((s) => s.video || s.shots.length > 0)
+  .slice(0, 3);
+
 
 export const storyMarkets = [
   "All",

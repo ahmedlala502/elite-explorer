@@ -13,6 +13,7 @@ import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
 /** Brand files exported for dark backgrounds need a dark plate. */
+import { homeFilms } from "@/lib/films";
 import { featuredStories } from "@/lib/stories";
 
 export const Route = createFileRoute("/")({
@@ -321,7 +322,7 @@ function Home() {
             </h2>
           </Reveal>
           <div className="mt-16">
-            <CampaignFilms />
+            <CampaignFilms items={homeFilms} />
           </div>
         </div>
       </section>
