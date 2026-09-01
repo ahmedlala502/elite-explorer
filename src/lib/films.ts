@@ -54,3 +54,6 @@ export const films: Film[] = [
     src: `${base}/2026-03/1860999803298860.mp4`,
   },
 ];
+
+/** Homepage teaser reel: a subset, so the stories page isn't a repeat. */
+export const homeFilms = films.slice(0, 3);
