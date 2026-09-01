@@ -22,7 +22,7 @@ export const Route = createFileRoute("/success-stories")({
       },
     ],
   }),
-  component: SuccessStories;
+  component: SuccessStories,
 });
 
 function SuccessStories() {
