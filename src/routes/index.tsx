@@ -13,8 +13,7 @@ import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
 /** Brand files exported for dark backgrounds need a dark plate. */
-import { homeFilms } from "@/lib/films";
-import { featuredStories } from "@/lib/stories";
+import { homeFeaturedStories, homeFilms } from "@/lib/media-plan";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -279,7 +278,7 @@ function Home() {
           </div>
 
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
-            {featuredStories.map((story, i) => (
+            {homeFeaturedStories.map((story, i) => (
               <Reveal key={story.brand} delay={i * 110} className="bg-surface-alt">
                 <article className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-card/60">
                   <StoryMedia

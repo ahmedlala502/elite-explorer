@@ -55,5 +55,3 @@ export const films: Film[] = [
   },
 ];
 
-/** Homepage teaser reel: a subset, so the stories page isn't a repeat. */
-export const homeFilms = films.slice(0, 3);
