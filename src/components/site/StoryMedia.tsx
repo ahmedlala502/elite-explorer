@@ -42,7 +42,10 @@ export function StoryMedia({
     const el = boxRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio > 0.3),
+      (entries) => {
+        const entry = entries[0];
+        if (entry) setInView(entry.isIntersecting && entry.intersectionRatio > 0.3);
+      },
       { threshold: [0, 0.3, 0.6] },
     );
     io.observe(el);
