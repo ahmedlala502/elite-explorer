@@ -223,14 +223,14 @@
 }
 
 @utility logo-plate {
-  filter: brightness(0) invert(1) opacity(0.62);
-  transition:
-    filter 0.5s ease,
-    opacity 0.5s ease;
+  filter: var(--logo-filter);
+  mix-blend-mode: var(--logo-blend);
+  opacity: var(--logo-opacity);
+  transition: opacity 0.5s ease;
 }
 
 @utility logo-plate-hover {
-  filter: brightness(0) invert(1) opacity(1);
+  opacity: var(--logo-opacity-hover);
 }
 
 /* ---------- motion ---------- */
@@ -281,8 +281,27 @@
 }
 
 @utility line-draw {
-  transform-origin: left;
+  transform-origin: var(--line-origin, left);
   animation: elite-line 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[dir="rtl"] {
+  --line-origin: right;
+}
+
+/* Arabic typography */
+[lang="ar"] body {
+  font-family: var(--font-arabic);
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3 {
+  letter-spacing: 0;
+}
+
+[lang="ar"] .eyebrow {
+  letter-spacing: 0.12em;
 }
 
 @media (prefers-reduced-motion: reduce) {
