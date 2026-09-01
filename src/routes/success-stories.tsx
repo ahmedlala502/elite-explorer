@@ -9,7 +9,12 @@ import { StoryMedia } from "@/components/site/StoryMedia";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-import { featuredStories, stories, storyMarkets } from "@/lib/stories";
+import {
+  storiesFeaturedStories,
+  storyFilms,
+  storyGridStories,
+} from "@/lib/media-plan";
+import { storyMarkets } from "@/lib/stories";
 
 export const Route = createFileRoute("/success-stories")({
   head: () => ({
@@ -28,7 +33,9 @@ function SuccessStories() {
   const [market, setMarket] = useState<string>("All");
 
   const filtered = useMemo(
-    () => (market === "All" ? stories : stories.filter((s) => s.market === market)),
+    () => (market === "All"
+        ? storyGridStories
+        : storyGridStories.filter((s) => s.market === market)),
     [market],
   );
 
@@ -67,7 +74,7 @@ function SuccessStories() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <p className="eyebrow text-gold">{c.stories.featured}</p>
           <div className="mt-12 grid gap-px bg-border md:grid-cols-3">
-            {featuredStories.map((story, i) => (
+            {storiesFeaturedStories.map((story, i) => (
               <Reveal key={story.brand} delay={i * 110} className="bg-[color:var(--ink)]">
                 <article className="group flex h-full flex-col">
                   <StoryMedia
@@ -162,7 +169,7 @@ function SuccessStories() {
             </h2>
           </Reveal>
           <div className="mt-16">
-            <CampaignFilms />
+            <CampaignFilms items={storyFilms} />
           </div>
         </div>
       </section>
