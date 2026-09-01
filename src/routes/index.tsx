@@ -57,7 +57,7 @@ function Home() {
 
         <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-16 pt-40 lg:px-10 lg:pb-24">
           <p className="eyebrow rise text-gold">{c.home.eyebrow}</p>
-          <h1 className="rise mt-8 max-w-[54rem] text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.92] text-[oklch(0.97_0.006_85)]">
+          <h1 className="rise mt-8 max-w-[54rem] text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.92] text-on-media">
             {c.home.heroLine1}
             <br />
             <span className="font-serif font-normal italic text-gold-gradient">
@@ -65,7 +65,7 @@ function Home() {
             </span>
           </h1>
           <div className="hairline line-draw mt-10 max-w-md" />
-          <p className="rise mt-8 max-w-lg text-base leading-relaxed text-[oklch(0.97_0.006_85/0.72)] sm:text-lg">
+          <p className="rise mt-8 max-w-lg text-base leading-relaxed text-on-media/70 sm:text-lg">
             {c.home.heroBody}
           </p>
           <div className="rise mt-10 flex flex-wrap items-center gap-4">
@@ -78,7 +78,7 @@ function Home() {
             </Link>
             <Link
               to="/success-stories"
-              className="inline-flex items-center gap-3 rounded-full border border-[oklch(1_0_0/0.35)] px-8 py-4 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-[oklch(0.97_0.006_85)] transition-colors duration-300 hover:border-gold hover:text-gold"
+              className="inline-flex items-center gap-3 rounded-full border border-on-media/35 px-8 py-4 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-on-media transition-colors duration-300 hover:border-gold hover:text-gold"
             >
               {c.common.seeStories}
             </Link>
@@ -87,7 +87,7 @@ function Home() {
       </section>
 
       {/* ---------------- stats ---------------- */}
-      <section className="border-y border-border bg-[color:var(--ink)]">
+      <section className="border-y border-border bg-surface-alt">
         <div className="mx-auto grid max-w-[1400px] grid-cols-2 px-6 lg:grid-cols-4 lg:px-10">
           {stats.map((stat, i) => (
             <Reveal
@@ -162,7 +162,7 @@ function Home() {
       </section>
 
       {/* ---------------- services ---------------- */}
-      <section className="relative border-t border-border bg-[color:var(--ink)] py-24 lg:py-32">
+      <section className="relative border-t border-border bg-surface-alt py-24 lg:py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="grid gap-16 lg:grid-cols-[1fr_0.8fr] lg:items-end">
             <Reveal>
@@ -185,7 +185,7 @@ function Home() {
           <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <div className="grid gap-px bg-border sm:grid-cols-2">
               {c.home.services.map((service, i) => (
-                <Reveal key={service.title} delay={i * 90} className="bg-[color:var(--ink)]">
+                <Reveal key={service.title} delay={i * 90} className="bg-surface-alt">
                   <div className="group h-full p-8 transition-colors duration-500 hover:bg-card/60">
                     <p className="font-serif text-3xl italic text-gold/60">0{i + 1}</p>
                     <h3 className="mt-6 text-lg font-bold uppercase tracking-[0.08em]">
@@ -209,9 +209,9 @@ function Home() {
                   height={1600}
                   className="size-full object-cover"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[oklch(0.12_0.006_70)] to-transparent p-8">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-scrim to-transparent p-8">
                   <p className="eyebrow text-gold">{c.home.filmEyebrow}</p>
-                  <p className="mt-3 max-w-xs text-sm text-[oklch(0.97_0.006_85)]">
+                  <p className="mt-3 max-w-xs text-sm text-on-media">
                     {c.home.filmBody}
                   </p>
                 </figcaption>
@@ -255,7 +255,7 @@ function Home() {
       </section>
 
       {/* ---------------- stories ---------------- */}
-      <section className="border-t border-border bg-[color:var(--ink)] py-24 lg:py-32">
+      <section className="border-t border-border bg-surface-alt py-24 lg:py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-wrap items-end justify-between gap-8">
             <Reveal>
@@ -279,7 +279,7 @@ function Home() {
 
           <div className="mt-16 grid gap-px bg-border md:grid-cols-3">
             {featuredStories.map((story, i) => (
-              <Reveal key={story.brand} delay={i * 110} className="bg-[color:var(--ink)]">
+              <Reveal key={story.brand} delay={i * 110} className="bg-surface-alt">
                 <article className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-card/60">
                   <div className={`${onDark(story.logo) ? "logo-tile-dark" : "logo-tile"} h-28 w-full group-hover:logo-tile-hover`}>
                     <img
@@ -341,18 +341,18 @@ function Home() {
           height={1088}
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-[oklch(0.12_0.006_70/0.78)]" aria-hidden />
+        <div className="absolute inset-0 bg-scrim/80" aria-hidden />
         <div className="relative mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-36">
           <Reveal className="max-w-2xl">
             <p className="eyebrow text-gold">{c.home.dashEyebrow}</p>
-            <h2 className="mt-8 text-[clamp(2.2rem,4.4vw,3.8rem)] font-extrabold leading-[1.02] text-[oklch(0.97_0.006_85)]">
+            <h2 className="mt-8 text-[clamp(2.2rem,4.4vw,3.8rem)] font-extrabold leading-[1.02] text-on-media">
               {c.home.dashLine1}
               <br />
-              <span className="font-serif font-normal italic text-[oklch(0.97_0.006_85/0.7)]">
+              <span className="font-serif font-normal italic text-on-media/70">
                 {c.home.dashLine2}
               </span>
             </h2>
-            <ul className="mt-10 space-y-4 text-sm text-[oklch(0.97_0.006_85/0.78)]">
+            <ul className="mt-10 space-y-4 text-sm text-on-media/75">
               {c.home.dashPoints.map((item) => (
                 <li key={item} className="flex items-start gap-4">
                   <span className="mt-2 h-px w-8 shrink-0 bg-gold" />
