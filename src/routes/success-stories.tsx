@@ -82,7 +82,7 @@ function SuccessStories() {
                         src={story.logo}
                         alt={`${story.brand} logo`}
                         loading="lazy"
-                        className="logo-img max-h-16"
+                        className="logo-img-color max-h-20"
                       />
                     </div>
                     <div className="mt-8">
@@ -140,7 +140,7 @@ function SuccessStories() {
                       src={story.logo}
                       alt={`${story.brand} logo`}
                       loading="lazy"
-                      className="logo-img max-h-20"
+                      className="logo-img-color max-h-24"
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-end">

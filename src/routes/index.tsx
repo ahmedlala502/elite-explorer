@@ -285,7 +285,7 @@ function Home() {
                       loading="lazy"
                       width={260}
                       height={112}
-                      className="logo-img max-h-16"
+                      className="logo-img-color max-h-20"
                     />
                   </div>
                   <div className="mt-10">
