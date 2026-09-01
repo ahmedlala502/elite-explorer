@@ -28,7 +28,7 @@ function Clients() {
 
   const stats = [
     { value: "85K+", label: c.common.creators },
-    { value: "930", label: c.common.campaigns },
+    
     { value: "52+", label: c.common.countriesReached },
     { value: "10+", label: c.common.yearsRunning },
   ];
