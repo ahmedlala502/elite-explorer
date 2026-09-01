@@ -40,7 +40,7 @@ function SuccessStories() {
           alt={c.home.heroAlt}
           width={1920}
           height={1280}
-          className="absolute inset-0 size-full object-cover object-[70%_center]"
+          className="absolute inset-0 size-full object-cover object-[70%_center] [filter:var(--hero-media-filter)]"
         />
         <div
           className="absolute inset-0"
@@ -49,14 +49,14 @@ function SuccessStories() {
         />
         <div className="relative mx-auto max-w-[1400px] px-6 pb-24 pt-40 lg:px-10 lg:pb-32 lg:pt-52">
           <p className="eyebrow rise text-gold">{c.stories.eyebrow}</p>
-          <h1 className="rise mt-8 max-w-3xl text-[clamp(2.6rem,7vw,5.6rem)] font-extrabold leading-[0.95] text-[oklch(0.97_0.006_85)]">
+          <h1 className="rise mt-8 max-w-3xl text-[clamp(2.6rem,7vw,5.6rem)] font-extrabold leading-[0.95] text-hero-fg">
             {c.stories.heroLine1}
             <br />
             <span className="font-serif font-normal italic text-gold-gradient">
               {c.stories.heroLine2}
             </span>
           </h1>
-          <p className="rise mt-10 max-w-xl text-base leading-relaxed text-[oklch(0.97_0.006_85/0.72)]">
+          <p className="rise mt-10 max-w-xl text-base leading-relaxed text-hero-fg/70">
             {c.stories.heroBody}
           </p>
         </div>

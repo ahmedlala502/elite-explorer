@@ -46,7 +46,7 @@ function Home() {
           alt={c.home.heroAlt}
           width={1920}
           height={1280}
-          className="absolute inset-0 size-full object-cover object-[70%_center]"
+          className="absolute inset-0 size-full object-cover object-[70%_center] [filter:var(--hero-media-filter)]"
         />
         <div
           className="absolute inset-0"
@@ -57,7 +57,7 @@ function Home() {
 
         <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-16 pt-40 lg:px-10 lg:pb-24">
           <p className="eyebrow rise text-gold">{c.home.eyebrow}</p>
-          <h1 className="rise mt-8 max-w-[54rem] text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.92] text-on-media">
+          <h1 className="rise mt-8 max-w-[54rem] text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.92] text-hero-fg">
             {c.home.heroLine1}
             <br />
             <span className="font-serif font-normal italic text-gold-gradient">
@@ -65,7 +65,7 @@ function Home() {
             </span>
           </h1>
           <div className="hairline line-draw mt-10 max-w-md" />
-          <p className="rise mt-8 max-w-lg text-base leading-relaxed text-on-media/70 sm:text-lg">
+          <p className="rise mt-8 max-w-lg text-base leading-relaxed text-hero-fg/72 sm:text-lg">
             {c.home.heroBody}
           </p>
           <div className="rise mt-10 flex flex-wrap items-center gap-4">
@@ -78,7 +78,7 @@ function Home() {
             </Link>
             <Link
               to="/success-stories"
-              className="inline-flex items-center gap-3 rounded-full border border-on-media/35 px-8 py-4 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-on-media transition-colors duration-300 hover:border-gold hover:text-gold"
+              className="inline-flex items-center gap-3 rounded-full border border-hero-fg/35 px-8 py-4 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-hero-fg transition-colors duration-300 hover:border-gold hover:text-gold"
             >
               {c.common.seeStories}
             </Link>
