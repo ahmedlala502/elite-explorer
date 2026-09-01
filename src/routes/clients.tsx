@@ -5,37 +5,33 @@ import { ArrowRight, Search } from "lucide-react";
 import textureNoir from "@/assets/texture-noir.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { clients } from "@/lib/clients";
+import { en } from "@/lib/content";
+import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/clients")({
   head: () => ({
     meta: [
-      { title: "Our clients — ELITƎ influencer marketing roster" },
-      {
-        name: "description",
-        content:
-          "Luxury, hospitality and lifestyle brands across the Gulf choose ELITƎ to reach their audience. Browse the roster.",
-      },
-      { property: "og:title", content: "ELITƎ clients" },
-      {
-        property: "og:description",
-        content: "The brands running influencer campaigns with ELITƎ across the Gulf and beyond.",
-      },
+      { title: en.clients.title },
+      { name: "description", content: en.clients.description },
+      { property: "og:title", content: en.clients.title },
+      { property: "og:description", content: en.clients.description },
     ],
   }),
   component: Clients,
 });
 
-const stats = [
-  { value: "85K+", label: "Creators" },
-  { value: "930", label: "Campaigns delivered" },
-  { value: "52+", label: "Countries reached" },
-  { value: "10+", label: "Years running campaigns" },
-];
-
 const markets = ["Saudi Arabia", "Kuwait", "United Arab Emirates", "Qatar", "Bahrain"];
 
 function Clients() {
+  const { c, term } = useI18n();
   const [query, setQuery] = useState("");
+
+  const stats = [
+    { value: "85K+", label: c.common.creators },
+    { value: "930", label: c.common.campaigns },
+    { value: "52+", label: c.common.countriesReached },
+    { value: "10+", label: c.common.yearsRunning },
+  ];
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -47,20 +43,21 @@ function Clients() {
     <>
       <section className="border-b border-border pb-20 pt-40 lg:pb-24 lg:pt-52">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          <p className="eyebrow rise text-gold">Our clients</p>
+          <p className="eyebrow rise text-gold">{c.clients.eyebrow}</p>
           <h1 className="rise mt-8 max-w-3xl text-[clamp(2.6rem,7vw,5.6rem)] font-extrabold leading-[0.95]">
-            The brands
+            {c.clients.heroLine1}
             <br />
-            <span className="font-serif font-normal italic text-gold-gradient">we work with.</span>
+            <span className="font-serif font-normal italic text-gold-gradient">
+              {c.clients.heroLine2}
+            </span>
           </h1>
           <p className="rise mt-10 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Luxury, hospitality and lifestyle brands across the Gulf choose ELITƎ to reach their
-            audience.
+            {c.clients.heroBody}
           </p>
           <div className="rise mt-12 flex flex-wrap gap-x-8 gap-y-3">
             {markets.map((market) => (
               <span key={market} className="eyebrow">
-                {market}
+                {term("markets", market)}
               </span>
             ))}
           </div>
@@ -74,7 +71,7 @@ function Clients() {
               key={stat.label}
               delay={i * 90}
               className={`border-border py-10 lg:py-14 ${
-                i % 2 === 1 ? "border-l pl-6" : "lg:border-l lg:pl-6"
+                i % 2 === 1 ? "border-s ps-6" : "lg:border-s lg:ps-6"
               } ${i < 2 ? "border-b lg:border-b-0" : ""}`}
             >
               <p className="text-[clamp(2rem,4.6vw,3.2rem)] font-extrabold leading-none">
@@ -90,13 +87,15 @@ function Clients() {
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="flex flex-wrap items-end justify-between gap-8">
-            <p className="eyebrow text-gold">The roster · {clients.length} brands</p>
+            <p className="eyebrow text-gold">
+              {c.clients.roster} · {clients.length} {c.clients.brands}
+            </p>
             <label className="flex w-full max-w-xs items-center gap-3 border-b border-border pb-3 focus-within:border-gold sm:w-auto">
               <Search className="size-4 text-muted-foreground" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search clients"
+                placeholder={c.clients.search}
                 className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
               />
             </label>
@@ -104,25 +103,25 @@ function Clients() {
 
           {filtered.length === 0 ? (
             <div className="mt-20 border-t border-border pt-16 text-center">
-              <p className="font-serif text-2xl italic text-foreground">No match for that name.</p>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Clear the search to see the full roster.
-              </p>
+              <p className="font-serif text-2xl italic text-foreground">{c.clients.emptyTitle}</p>
+              <p className="mt-4 text-sm text-muted-foreground">{c.clients.emptyBody}</p>
             </div>
           ) : (
-            <div className="mt-14 grid gap-px bg-border sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {filtered.map((client, i) => (
-                <Reveal key={client.name} delay={Math.min(i, 12) * 40} className="bg-background">
-                  <div className="group flex h-36 flex-col items-center justify-center gap-4 p-6 transition-colors duration-500 hover:bg-card/60">
-                    <img
-                      src={client.logo}
-                      alt={`${client.name} logo`}
-                      loading="lazy"
-                      width={160}
-                      height={64}
-                      className="logo-plate max-h-10 w-auto object-contain group-hover:logo-plate-hover"
-                    />
-                    <span className="text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <Reveal key={client.name} delay={Math.min(i, 12) * 40}>
+                  <div className="group flex flex-col items-center gap-4">
+                    <div className="logo-tile h-40 w-full group-hover:logo-tile-hover">
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        loading="lazy"
+                        width={280}
+                        height={140}
+                        className="logo-img max-h-24"
+                      />
+                    </div>
+                    <span className="text-center text-[0.68rem] uppercase tracking-[0.18em] text-muted-foreground">
                       {client.name}
                     </span>
                   </div>
@@ -141,21 +140,24 @@ function Clients() {
           loading="lazy"
           width={1920}
           height={1080}
-          className="absolute inset-0 size-full object-cover opacity-60"
+          className="absolute inset-0 size-full object-cover opacity-60 dark:opacity-70"
         />
+        <div className="absolute inset-0 bg-background/70 dark:bg-transparent" aria-hidden />
         <div className="relative mx-auto max-w-[1400px] px-6 py-24 text-center lg:px-10 lg:py-32">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold leading-[1.05]">
-              Your brand
+              {c.clients.ctaLine1}
               <br />
-              <span className="font-serif font-normal italic text-gold-gradient">belongs here.</span>
+              <span className="font-serif font-normal italic text-gold-gradient">
+                {c.clients.ctaLine2}
+              </span>
             </h2>
             <Link
               to="/contact"
               className="group mt-12 inline-flex items-center gap-3 rounded-full bg-[image:var(--gradient-gold)] px-9 py-4 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Become a client
-              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              {c.clients.ctaButton}
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100" />
             </Link>
           </Reveal>
         </div>
