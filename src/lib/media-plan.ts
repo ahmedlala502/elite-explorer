@@ -87,6 +87,13 @@ function resolve(story: Story): StoryMediaPlan {
     return { kind: "still", src: story.poster };
   }
 
+  const key = brandFallback[story.brand];
+  const bespoke = key ? fallbackPool.find((f) => f.key === key && free(f.key)) : undefined;
+  if (bespoke) {
+    claim(bespoke.key);
+    return { kind: "still", src: bespoke.src };
+  }
+
   const slot = fallbackPool.find((f) => free(f.key));
   if (slot) {
     claim(slot.key);
