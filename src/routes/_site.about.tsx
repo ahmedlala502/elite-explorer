@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/_site/about")({
   head: () => ({
     meta: [
       { title: en.about.title },

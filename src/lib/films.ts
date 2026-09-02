@@ -8,7 +8,8 @@ export type Film = {
   src: string;
 };
 
-const base = "https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/photos/case_studies";
+const base =
+  "https://grand-community.fra1.digitaloceanspaces.com/uploads-live/f_s3/photos/case_studies";
 
 export const films: Film[] = [
   {
@@ -54,4 +55,3 @@ export const films: Film[] = [
     src: `${base}/2026-03/1860999803298860.mp4`,
   },
 ];
-

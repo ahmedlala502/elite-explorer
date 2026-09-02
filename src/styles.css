@@ -96,7 +96,12 @@
   --logo-opacity: 0.72;
   --logo-opacity-hover: 1;
 
-  --gradient-gold: linear-gradient(100deg, var(--gold-deep), var(--gold-soft) 45%, var(--gold) 100%);
+  --gradient-gold: linear-gradient(
+    100deg,
+    var(--gold-deep),
+    var(--gold-soft) 45%,
+    var(--gold) 100%
+  );
   --gradient-veil: linear-gradient(
     to var(--veil-to, right),
     oklch(0.988 0.006 85 / 0.96) 0%,
@@ -163,6 +168,159 @@
   );
   --shadow-lux: 0 40px 90px -50px oklch(0 0 0 / 0.9);
   --shadow-gold: 0 22px 60px -28px color-mix(in oklab, var(--gold) 42%, transparent);
+}
+
+/* ---------- workspace (/app) tokens ----------
+ * The signed-in workspace shares the site's champagne accent and status
+ * palette, but owns its own surface ramp, elevation scale and radii so dense
+ * product screens read as one system.
+ */
+:root {
+  --bg-raised: var(--card);
+  --bg-sunken: var(--surface-alt);
+  --bg-inset: oklch(0.965 0.004 84);
+  --border-strong: oklch(0.19 0.008 70 / 20%);
+  --border-subtle: oklch(0.19 0.008 70 / 8%);
+
+  --accent-text: var(--gold-deep);
+  --accent-soft: color-mix(in oklab, var(--gold) 12%, transparent);
+  --accent-line: color-mix(in oklab, var(--gold) 34%, transparent);
+
+  /* Elevation: a hairline top highlight plus a soft, wide ambient shadow.
+     Two steps only — resting panels and things that float above them. */
+  --shadow-panel: 0 1px 1px oklch(0.2 0.01 70 / 0.03), 0 10px 30px -22px oklch(0.2 0.01 70 / 0.28);
+  --shadow-panel-hover:
+    0 1px 1px oklch(0.2 0.01 70 / 0.04), 0 22px 48px -28px oklch(0.2 0.01 70 / 0.36);
+  --shadow-float: 0 18px 50px -18px oklch(0.2 0.01 70 / 0.26);
+  --panel-sheen: linear-gradient(180deg, oklch(1 0 0 / 0.5), oklch(1 0 0 / 0) 42%);
+
+  --ok: #1f6f4a;
+  --ok-soft: rgb(31 111 74 / 0.1);
+  --warn: #8a5a16;
+  --warn-soft: rgb(138 90 22 / 0.12);
+  --danger: #a32b22;
+  --danger-soft: rgb(163 43 34 / 0.1);
+  --info: #1f5b94;
+  --info-soft: rgb(31 91 148 / 0.1);
+  --neutral: #55585f;
+  --neutral-soft: rgb(85 88 95 / 0.09);
+
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-pill: 999px;
+}
+
+.dark {
+  --bg-inset: oklch(0.165 0.006 72);
+  --border-strong: oklch(1 0 0 / 20%);
+  --border-subtle: oklch(1 0 0 / 7%);
+
+  --accent-text: var(--gold-soft);
+  --accent-soft: color-mix(in oklab, var(--gold) 16%, transparent);
+  --accent-line: color-mix(in oklab, var(--gold) 32%, transparent);
+
+  --shadow-panel: 0 1px 0 oklch(1 0 0 / 0.04) inset, 0 14px 34px -24px oklch(0 0 0 / 0.9);
+  --shadow-panel-hover: 0 1px 0 oklch(1 0 0 / 0.06) inset, 0 26px 56px -28px oklch(0 0 0 / 1);
+  --shadow-float: 0 24px 60px -20px oklch(0 0 0 / 0.85);
+  --panel-sheen: linear-gradient(180deg, oklch(1 0 0 / 0.055), oklch(1 0 0 / 0) 45%);
+
+  --ok: #5fcb96;
+  --ok-soft: rgb(95 203 150 / 0.14);
+  --warn: #e0b063;
+  --warn-soft: rgb(224 176 99 / 0.14);
+  --danger: #f08a80;
+  --danger-soft: rgb(240 138 128 / 0.14);
+  --info: #7fb6e8;
+  --info-soft: rgb(127 182 232 / 0.14);
+  --neutral: #a7aab1;
+  --neutral-soft: rgb(167 170 177 / 0.12);
+}
+
+/* ---------- workspace dark: obsidian ----------
+ * The marketing site's dark mode is a warm noir that sits under full-bleed
+ * film stills. The workspace has no such imagery, and at this density the
+ * same warm cast reads muddy — every surface, every border and the champagne
+ * accent all land in one narrow band of hue.
+ *
+ * So the workspace runs its own dark ramp: a cool, near-neutral obsidian
+ * (hue 266, chroma <= 0.008). The champagne stays exactly as warm as it was,
+ * which now buys real separation — warm accent against cool ground — instead
+ * of dissolving into the background. Scoped by the attribute AppShell sets on
+ * <html>, so it also reaches portalled toasts and menus.
+ */
+.dark[data-workspace],
+.dark .workspace-theme {
+  --ink: oklch(0.112 0.005 266);
+  --surface: oklch(0.152 0.005 266);
+  --surface-alt: oklch(0.126 0.005 266);
+  --scrim: oklch(0.085 0.006 266);
+  --background: oklch(0.152 0.005 266);
+  --foreground: oklch(0.967 0.002 266);
+
+  --card: oklch(0.189 0.006 268);
+  --card-foreground: oklch(0.967 0.002 266);
+  --popover: oklch(0.204 0.007 268);
+  --popover-foreground: oklch(0.967 0.002 266);
+
+  /* champagne, held warm on purpose */
+  --gold: oklch(0.815 0.088 86);
+  --gold-soft: oklch(0.9 0.052 90);
+  --gold-deep: oklch(0.655 0.09 76);
+
+  --primary: oklch(0.815 0.088 86);
+  --primary-foreground: oklch(0.14 0.008 266);
+
+  --secondary: oklch(0.235 0.007 268);
+  --secondary-foreground: oklch(0.967 0.002 266);
+  --muted: oklch(0.235 0.007 268);
+  --muted-foreground: oklch(0.715 0.011 268);
+  --accent: oklch(0.268 0.009 270);
+  --accent-foreground: oklch(0.967 0.002 266);
+
+  --destructive: oklch(0.64 0.17 22);
+
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.815 0.088 86 / 45%);
+
+  --bg-inset: oklch(0.171 0.006 268);
+  --border-strong: oklch(1 0 0 / 18%);
+  --border-subtle: oklch(1 0 0 / 6%);
+
+  --shadow-lux: 0 40px 90px -50px oklch(0 0 0 / 0.9);
+  --shadow-gold: 0 22px 60px -28px color-mix(in oklab, var(--gold) 42%, transparent);
+
+  --info: #86b9ea;
+  --info-soft: rgb(134 185 234 / 0.14);
+  --neutral: #a4a7b2;
+  --neutral-soft: rgb(164 167 178 / 0.12);
+}
+
+/* A single, very wide champagne bloom behind the workspace keeps the obsidian
+   from reading as flat black. It is decorative: no contrast depends on it. */
+@utility app-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-frame::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    100% 46% at 50% -6%,
+    color-mix(in oklab, var(--gold) 5%, transparent),
+    transparent 60%
+  );
+  opacity: 0.35;
+}
+
+.dark[data-workspace] .app-frame::before,
+.dark .app-frame.workspace-theme::before {
+  opacity: 0.5;
 }
 
 /* right-to-left: mirror the directional veil and reveal lines */
@@ -290,6 +448,54 @@
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+/* ---------- workspace surfaces ----------
+ * One elevation recipe, used by every panel, stat card and floating menu, so
+ * "raised" means the same thing on every screen.
+ */
+
+@utility panel-surface {
+  position: relative;
+  background-color: var(--bg-raised);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-panel);
+}
+
+/* The sheen is a one-pixel-ish light catch along the top edge — what makes a
+   card read as a physical plane rather than a rectangle of fill. */
+@utility panel-sheen {
+  position: relative;
+}
+
+.panel-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: var(--panel-sheen);
+  opacity: 0.6;
+}
+
+.panel-sheen > * {
+  position: relative;
+}
+
+@utility float-surface {
+  background-color: var(--popover);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-float);
+}
+
+/* Table and list rows: hover is a tint, not a border, so row height never
+   shifts under the cursor. */
+@utility row-hover {
+  transition: background-color 0.2s ease;
+}
+
+.row-hover:hover {
+  background-color: color-mix(in oklab, var(--foreground) 4%, transparent);
 }
 
 /* ---------- motion ---------- */

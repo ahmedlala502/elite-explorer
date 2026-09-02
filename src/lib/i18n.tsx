@@ -40,10 +40,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   const setLang = useCallback((next: Lang) => setLangState(next), []);
-  const toggleLang = useCallback(
-    () => setLangState((prev) => (prev === "en" ? "ar" : "en")),
-    [],
-  );
+  const toggleLang = useCallback(() => setLangState((prev) => (prev === "en" ? "ar" : "en")), []);
 
   const value = useMemo<I18nValue>(() => {
     const c = content[lang];

@@ -51,11 +51,7 @@ function FilmCard({ film, delay }: { film: (typeof films)[number]; delay: number
           className="absolute inset-0 flex items-center justify-center"
         >
           <span className="flex size-16 items-center justify-center rounded-full border border-[oklch(1_0_0/0.5)] bg-[oklch(0.12_0.006_70/0.45)] text-[oklch(1_0_0)] backdrop-blur-sm transition-all duration-500 group-hover:border-gold group-hover:text-gold">
-            {playing ? (
-              <Pause className="size-5" />
-            ) : (
-              <Play className="size-5 translate-x-px" />
-            )}
+            {playing ? <Pause className="size-5" /> : <Play className="size-5 translate-x-px" />}
           </span>
         </button>
 

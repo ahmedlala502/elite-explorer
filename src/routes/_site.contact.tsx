@@ -8,7 +8,7 @@ import { EliteMark } from "@/components/brand/EliteWordmark";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/_site/contact")({
   head: () => ({
     meta: [
       { title: en.contact.title },
@@ -128,4 +128,3 @@ function Contact() {
     </section>
   );
 }
-

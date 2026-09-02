@@ -13,6 +13,7 @@ export function SiteHeader() {
 
   const nav = [
     { to: "/", label: c.nav.home },
+    { to: "/dashboard", label: c.nav.dashboard },
     { to: "/success-stories", label: c.nav.stories },
     { to: "/clients", label: c.nav.clients },
     { to: "/about", label: c.nav.about },
@@ -57,10 +58,10 @@ export function SiteHeader() {
         <div className="hidden items-center gap-4 lg:flex">
           <SiteControls />
           <Link
-            to="/contact"
+            to="/app"
             className="rounded-full bg-[image:var(--gradient-gold)] px-6 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:-translate-y-0.5"
           >
-            {c.nav.cta}
+            {c.nav.demo}
           </Link>
         </div>
 
@@ -93,11 +94,11 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/app"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-[image:var(--gradient-gold)] px-6 py-3 text-center text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-foreground"
             >
-              {c.nav.cta}
+              {c.nav.demo}
             </Link>
           </nav>
         </div>

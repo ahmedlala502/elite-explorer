@@ -32,6 +32,16 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/dashboard" className="transition-colors hover:text-foreground">
+                  {c.nav.dashboard}
+                </Link>
+              </li>
+              <li>
+                <Link to="/app" className="transition-colors hover:text-foreground">
+                  {c.nav.demo}
+                </Link>
+              </li>
+              <li>
                 <Link to="/clients" className="transition-colors hover:text-foreground">
                   {c.nav.clients}
                 </Link>

@@ -8,7 +8,7 @@ import { clients } from "@/lib/clients";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-export const Route = createFileRoute("/clients")({
+export const Route = createFileRoute("/_site/clients")({
   head: () => ({
     meta: [
       { title: en.clients.title },
@@ -28,7 +28,7 @@ function Clients() {
 
   const stats = [
     { value: "85K+", label: c.common.creators },
-    
+
     { value: "52+", label: c.common.countriesReached },
     { value: "10+", label: c.common.yearsRunning },
   ];

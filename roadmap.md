@@ -6,3 +6,7 @@
 - [x] Arabic + English site copy with RTL support and language toggle
 - [x] Light + dark modes with theme toggle
 - [x] Import success-story names/URLs from uploaded xlsx (gc-elite-com-2026-08-25.xlsx)
+- [x] Port the remaining prototype pages: product `/dashboard`, `/login`, `/signup`
+      and the eight `/app/*` workspace screens
+- [x] Split routing into `_site` (marketing), `_auth` (split-panel) and `app`
+      (sidebar + app bar + mobile tab bar) layouts

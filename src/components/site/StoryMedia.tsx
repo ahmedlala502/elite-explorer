@@ -60,10 +60,7 @@ export function StoryMedia({
   }, [frames.length, inView]);
 
   return (
-    <div
-      ref={boxRef}
-      className={`relative overflow-hidden bg-[color:var(--ink)] ${className}`}
-    >
+    <div ref={boxRef} className={`relative overflow-hidden bg-[color:var(--ink)] ${className}`}>
       {media.kind === "video" ? (
         <video
           ref={videoRef}

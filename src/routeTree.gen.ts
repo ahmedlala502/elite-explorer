@@ -9,122 +9,400 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ClientsRouteImport } from './routes/clients'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
+import { Route as SiteRouteImport } from './routes/_site'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as SiteIndexRouteImport } from './routes/_site.index'
+import { Route as SiteAboutRouteImport } from './routes/_site.about'
+import { Route as SiteClientsRouteImport } from './routes/_site.clients'
+import { Route as SiteContactRouteImport } from './routes/_site.contact'
+import { Route as SiteDashboardRouteImport } from './routes/_site.dashboard'
+import { Route as SiteSuccessStoriesRouteImport } from './routes/_site.success-stories'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppAccountRouteImport } from './routes/app.account'
+import { Route as AppBranchesRouteImport } from './routes/app.branches'
+import { Route as AppReportsRouteImport } from './routes/app.reports'
+import { Route as AppScannerRouteImport } from './routes/app.scanner'
+import { Route as AppCampaignsIndexRouteImport } from './routes/app.campaigns.index'
+import { Route as AppCampaignsCampaignIdRouteImport } from './routes/app.campaigns.$campaignId'
+import { Route as AppInfluencersIndexRouteImport } from './routes/app.influencers.index'
+import { Route as AppInfluencersInfluencerIdRouteImport } from './routes/app.influencers.$influencerId'
 
-const IndexRoute = IndexRouteImport.update({
+const SiteRoute = SiteRouteImport.update({
+  id: '/_site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteIndexRoute = SiteIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SiteRoute,
 } as any)
-const AboutRoute = AboutRouteImport.update({
+const SiteAboutRoute = SiteAboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SiteRoute,
 } as any)
-const ClientsRoute = ClientsRouteImport.update({
+const SiteClientsRoute = SiteClientsRouteImport.update({
   id: '/clients',
   path: '/clients',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SiteRoute,
 } as any)
-const ContactRoute = ContactRouteImport.update({
+const SiteContactRoute = SiteContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SiteRoute,
 } as any)
-const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
+const SiteDashboardRoute = SiteDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteSuccessStoriesRoute = SiteSuccessStoriesRouteImport.update({
   id: '/success-stories',
   path: '/success-stories',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SiteRoute,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAccountRoute = AppAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBranchesRoute = AppBranchesRouteImport.update({
+  id: '/branches',
+  path: '/branches',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReportsRoute = AppReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppScannerRoute = AppScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCampaignsIndexRoute = AppCampaignsIndexRouteImport.update({
+  id: '/campaigns/',
+  path: '/campaigns/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCampaignsCampaignIdRoute = AppCampaignsCampaignIdRouteImport.update({
+  id: '/campaigns/$campaignId',
+  path: '/campaigns/$campaignId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInfluencersIndexRoute = AppInfluencersIndexRouteImport.update({
+  id: '/influencers/',
+  path: '/influencers/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInfluencersInfluencerIdRoute =
+  AppInfluencersInfluencerIdRouteImport.update({
+    id: '/influencers/$influencerId',
+    path: '/influencers/$influencerId',
+    getParentRoute: () => AppRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clients': typeof ClientsRoute
-  '/contact': typeof ContactRoute
-  '/success-stories': typeof SuccessStoriesRoute
+  '/': typeof SiteIndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/about': typeof SiteAboutRoute
+  '/clients': typeof SiteClientsRoute
+  '/contact': typeof SiteContactRoute
+  '/dashboard': typeof SiteDashboardRoute
+  '/success-stories': typeof SiteSuccessStoriesRoute
+  '/app/account': typeof AppAccountRoute
+  '/app/branches': typeof AppBranchesRoute
+  '/app/reports': typeof AppReportsRoute
+  '/app/scanner': typeof AppScannerRoute
+  '/app/': typeof AppIndexRoute
+  '/app/campaigns/$campaignId': typeof AppCampaignsCampaignIdRoute
+  '/app/influencers/$influencerId': typeof AppInfluencersInfluencerIdRoute
+  '/app/campaigns/': typeof AppCampaignsIndexRoute
+  '/app/influencers/': typeof AppInfluencersIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clients': typeof ClientsRoute
-  '/contact': typeof ContactRoute
-  '/success-stories': typeof SuccessStoriesRoute
+  '/about': typeof SiteAboutRoute
+  '/clients': typeof SiteClientsRoute
+  '/contact': typeof SiteContactRoute
+  '/dashboard': typeof SiteDashboardRoute
+  '/success-stories': typeof SiteSuccessStoriesRoute
+  '/app/account': typeof AppAccountRoute
+  '/app/branches': typeof AppBranchesRoute
+  '/app/reports': typeof AppReportsRoute
+  '/app/scanner': typeof AppScannerRoute
+  '/': typeof SiteIndexRoute
+  '/app': typeof AppIndexRoute
+  '/app/campaigns/$campaignId': typeof AppCampaignsCampaignIdRoute
+  '/app/influencers/$influencerId': typeof AppInfluencersInfluencerIdRoute
+  '/app/campaigns': typeof AppCampaignsIndexRoute
+  '/app/influencers': typeof AppInfluencersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/clients': typeof ClientsRoute
-  '/contact': typeof ContactRoute
-  '/success-stories': typeof SuccessStoriesRoute
+  '/_site': typeof SiteRouteWithChildren
+  '/app': typeof AppRouteWithChildren
+  '/_site/about': typeof SiteAboutRoute
+  '/_site/clients': typeof SiteClientsRoute
+  '/_site/contact': typeof SiteContactRoute
+  '/_site/dashboard': typeof SiteDashboardRoute
+  '/_site/success-stories': typeof SiteSuccessStoriesRoute
+  '/app/account': typeof AppAccountRoute
+  '/app/branches': typeof AppBranchesRoute
+  '/app/reports': typeof AppReportsRoute
+  '/app/scanner': typeof AppScannerRoute
+  '/_site/': typeof SiteIndexRoute
+  '/app/': typeof AppIndexRoute
+  '/app/campaigns/$campaignId': typeof AppCampaignsCampaignIdRoute
+  '/app/influencers/$influencerId': typeof AppInfluencersInfluencerIdRoute
+  '/app/campaigns/': typeof AppCampaignsIndexRoute
+  '/app/influencers/': typeof AppInfluencersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/clients' | '/contact' | '/success-stories'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/about'
+    | '/clients'
+    | '/contact'
+    | '/dashboard'
+    | '/success-stories'
+    | '/app/account'
+    | '/app/branches'
+    | '/app/reports'
+    | '/app/scanner'
+    | '/app/'
+    | '/app/campaigns/$campaignId'
+    | '/app/influencers/$influencerId'
+    | '/app/campaigns/'
+    | '/app/influencers/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/clients' | '/contact' | '/success-stories'
-  id: '__root__' | '/' | '/about' | '/clients' | '/contact' | '/success-stories'
+  to:
+    | '/about'
+    | '/clients'
+    | '/contact'
+    | '/dashboard'
+    | '/success-stories'
+    | '/app/account'
+    | '/app/branches'
+    | '/app/reports'
+    | '/app/scanner'
+    | '/'
+    | '/app'
+    | '/app/campaigns/$campaignId'
+    | '/app/influencers/$influencerId'
+    | '/app/campaigns'
+    | '/app/influencers'
+  id:
+    | '__root__'
+    | '/_site'
+    | '/app'
+    | '/_site/about'
+    | '/_site/clients'
+    | '/_site/contact'
+    | '/_site/dashboard'
+    | '/_site/success-stories'
+    | '/app/account'
+    | '/app/branches'
+    | '/app/reports'
+    | '/app/scanner'
+    | '/_site/'
+    | '/app/'
+    | '/app/campaigns/$campaignId'
+    | '/app/influencers/$influencerId'
+    | '/app/campaigns/'
+    | '/app/influencers/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ClientsRoute: typeof ClientsRoute
-  ContactRoute: typeof ContactRoute
-  SuccessStoriesRoute: typeof SuccessStoriesRoute
+  SiteRoute: typeof SiteRouteWithChildren
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_site': {
+      id: '/_site'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof SiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_site/': {
+      id: '/_site/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SiteIndexRouteImport
+      parentRoute: typeof SiteRoute
     }
-    '/about': {
-      id: '/about'
+    '/_site/about': {
+      id: '/_site/about'
       path: '/about'
       fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SiteAboutRouteImport
+      parentRoute: typeof SiteRoute
     }
-    '/clients': {
-      id: '/clients'
+    '/_site/clients': {
+      id: '/_site/clients'
       path: '/clients'
       fullPath: '/clients'
-      preLoaderRoute: typeof ClientsRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SiteClientsRouteImport
+      parentRoute: typeof SiteRoute
     }
-    '/contact': {
-      id: '/contact'
+    '/_site/contact': {
+      id: '/_site/contact'
       path: '/contact'
       fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SiteContactRouteImport
+      parentRoute: typeof SiteRoute
     }
-    '/success-stories': {
-      id: '/success-stories'
+    '/_site/dashboard': {
+      id: '/_site/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof SiteDashboardRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/success-stories': {
+      id: '/_site/success-stories'
       path: '/success-stories'
       fullPath: '/success-stories'
-      preLoaderRoute: typeof SuccessStoriesRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SiteSuccessStoriesRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/account': {
+      id: '/app/account'
+      path: '/account'
+      fullPath: '/app/account'
+      preLoaderRoute: typeof AppAccountRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/branches': {
+      id: '/app/branches'
+      path: '/branches'
+      fullPath: '/app/branches'
+      preLoaderRoute: typeof AppBranchesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/reports': {
+      id: '/app/reports'
+      path: '/reports'
+      fullPath: '/app/reports'
+      preLoaderRoute: typeof AppReportsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/scanner': {
+      id: '/app/scanner'
+      path: '/scanner'
+      fullPath: '/app/scanner'
+      preLoaderRoute: typeof AppScannerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/campaigns/': {
+      id: '/app/campaigns/'
+      path: '/campaigns'
+      fullPath: '/app/campaigns/'
+      preLoaderRoute: typeof AppCampaignsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/campaigns/$campaignId': {
+      id: '/app/campaigns/$campaignId'
+      path: '/campaigns/$campaignId'
+      fullPath: '/app/campaigns/$campaignId'
+      preLoaderRoute: typeof AppCampaignsCampaignIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/influencers/': {
+      id: '/app/influencers/'
+      path: '/influencers'
+      fullPath: '/app/influencers/'
+      preLoaderRoute: typeof AppInfluencersIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/influencers/$influencerId': {
+      id: '/app/influencers/$influencerId'
+      path: '/influencers/$influencerId'
+      fullPath: '/app/influencers/$influencerId'
+      preLoaderRoute: typeof AppInfluencersInfluencerIdRouteImport
+      parentRoute: typeof AppRoute
     }
   }
 }
 
+interface SiteRouteChildren {
+  SiteAboutRoute: typeof SiteAboutRoute
+  SiteClientsRoute: typeof SiteClientsRoute
+  SiteContactRoute: typeof SiteContactRoute
+  SiteDashboardRoute: typeof SiteDashboardRoute
+  SiteSuccessStoriesRoute: typeof SiteSuccessStoriesRoute
+  SiteIndexRoute: typeof SiteIndexRoute
+}
+
+const SiteRouteChildren: SiteRouteChildren = {
+  SiteAboutRoute: SiteAboutRoute,
+  SiteClientsRoute: SiteClientsRoute,
+  SiteContactRoute: SiteContactRoute,
+  SiteDashboardRoute: SiteDashboardRoute,
+  SiteSuccessStoriesRoute: SiteSuccessStoriesRoute,
+  SiteIndexRoute: SiteIndexRoute,
+}
+
+const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
+
+interface AppRouteChildren {
+  AppAccountRoute: typeof AppAccountRoute
+  AppBranchesRoute: typeof AppBranchesRoute
+  AppReportsRoute: typeof AppReportsRoute
+  AppScannerRoute: typeof AppScannerRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppCampaignsCampaignIdRoute: typeof AppCampaignsCampaignIdRoute
+  AppInfluencersInfluencerIdRoute: typeof AppInfluencersInfluencerIdRoute
+  AppCampaignsIndexRoute: typeof AppCampaignsIndexRoute
+  AppInfluencersIndexRoute: typeof AppInfluencersIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAccountRoute: AppAccountRoute,
+  AppBranchesRoute: AppBranchesRoute,
+  AppReportsRoute: AppReportsRoute,
+  AppScannerRoute: AppScannerRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppCampaignsCampaignIdRoute: AppCampaignsCampaignIdRoute,
+  AppInfluencersInfluencerIdRoute: AppInfluencersInfluencerIdRoute,
+  AppCampaignsIndexRoute: AppCampaignsIndexRoute,
+  AppInfluencersIndexRoute: AppInfluencersIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ClientsRoute: ClientsRoute,
-  ContactRoute: ContactRoute,
-  SuccessStoriesRoute: SuccessStoriesRoute,
+  SiteRoute: SiteRouteWithChildren,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

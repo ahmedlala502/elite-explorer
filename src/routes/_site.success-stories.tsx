@@ -2,21 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
-import heroNight from "@/assets/hero-night.jpg";
+import heroStories from "@/assets/hero-stories.jpg";
 import { CampaignFilms } from "@/components/site/CampaignFilms";
 import { Reveal } from "@/components/site/Reveal";
 import { StoryMedia } from "@/components/site/StoryMedia";
 import { en } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
-import {
-  storiesFeaturedStories,
-  storyFilms,
-  storyGridStories,
-} from "@/lib/media-plan";
+import { storiesFeaturedStories, storyFilms, storyGridStories } from "@/lib/media-plan";
 import { storyMarkets } from "@/lib/stories";
 
-export const Route = createFileRoute("/success-stories")({
+export const Route = createFileRoute("/_site/success-stories")({
   head: () => ({
     meta: [
       { title: en.stories.title },
@@ -33,9 +29,8 @@ function SuccessStories() {
   const [market, setMarket] = useState<string>("All");
 
   const filtered = useMemo(
-    () => (market === "All"
-        ? storyGridStories
-        : storyGridStories.filter((s) => s.market === market)),
+    () =>
+      market === "All" ? storyGridStories : storyGridStories.filter((s) => s.market === market),
     [market],
   );
 
@@ -43,11 +38,11 @@ function SuccessStories() {
     <>
       <section className="relative overflow-hidden border-b border-border">
         <img
-          src={heroNight}
-          alt={c.home.heroAlt}
+          src={heroStories}
+          alt={c.stories.heroAlt}
           width={1920}
-          height={1280}
-          className="absolute inset-0 size-full object-cover object-[70%_center] [filter:var(--hero-media-filter)]"
+          height={1080}
+          className="absolute inset-0 size-full object-cover object-[60%_center] [filter:var(--hero-media-filter)]"
         />
         <div
           className="absolute inset-0"

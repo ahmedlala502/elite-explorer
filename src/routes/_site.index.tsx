@@ -15,7 +15,7 @@ import { useI18n } from "@/lib/i18n";
 /** Brand files exported for dark backgrounds need a dark plate. */
 import { homeFeaturedStories, homeFilms } from "@/lib/media-plan";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_site/")({
   head: () => ({
     meta: [
       { title: en.home.title },
@@ -211,9 +211,7 @@ function Home() {
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-scrim to-transparent p-8">
                   <p className="eyebrow text-gold">{c.home.filmEyebrow}</p>
-                  <p className="mt-3 max-w-xs text-sm text-on-media">
-                    {c.home.filmBody}
-                  </p>
+                  <p className="mt-3 max-w-xs text-sm text-on-media">{c.home.filmBody}</p>
                 </figcaption>
               </figure>
             </Reveal>
